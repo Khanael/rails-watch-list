@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.banner {
+  height: 60vh;
+  margin: 0;
+  padding: 0;
+  background-image: asset-url('cinema.jpg');
+  background-position: center;
+  background-size: cover;
+  h1, p {
+    color: white;
+  }
+}

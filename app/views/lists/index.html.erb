@@ -1,0 +1,13 @@
+<div class="banner d-flex justify-content-center align-items-center">
+  <h1>My lists</h1>
+</div>
+<div class="container">
+  <div class="m-3 d-flex justify-content-between">
+    <% @lists.each do |list| %>
+      <div class="d-flex w-25 flex-column">
+        <%= image_tag "cinema.jpg", alt: "Ma liste de film", class: "w-100" %>
+        <%= link_to list.name, list_path(list), class: "btn"%>
+      </div>
+    <% end %>
+  </div>
+</div>
