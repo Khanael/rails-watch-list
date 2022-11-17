@@ -4,10 +4,18 @@
 <div class="container">
   <div class="m-3 d-flex justify-content-between">
     <% @lists.each do |list| %>
-      <div class="d-flex w-25 flex-column">
-        <%= image_tag "cinema.jpg", alt: "Ma liste de film", class: "w-100" %>
-        <%= link_to list.name, list_path(list), class: "btn"%>
-      </div>
+      <%= link_to list_path(list) do %>
+        <div class="card" style="width: 18rem;">
+          <% if list.photo.attached? %>
+            <%= cl_image_tag list.photo.key %>
+          <% else %>
+            <%= image_tag "cinema.jpg" %>
+          <% end %>
+          <div class="card-body">
+            <p class="card-text"><%= list.name %></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

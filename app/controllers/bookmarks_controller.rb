@@ -10,7 +10,6 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    # @bookmark.movie = Movie.find(params[:bookmark][:movie])
     @bookmark.list = @list
     @bookmark.save
 
